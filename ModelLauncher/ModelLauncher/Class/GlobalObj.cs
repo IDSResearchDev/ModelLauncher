@@ -36,6 +36,7 @@ namespace ModelLauncher.Class
                     if (x == 0)
                     { RootCurrentModelFolder = item.Path; }
                     CopyConfigFiles(item.Path);
+
                     var fabctrl = new FabricatorControl
                     {
                         Name = "fab" + x,
@@ -46,7 +47,8 @@ namespace ModelLauncher.Class
                         UserCtrlViewId = Convert.ToInt32(item.Viewid),
                         UserCtrlConfiguration = item.Configuration,
                         ServerName = item.ServerName,
-                        UserCtrlRole = item.Role
+                        UserCtrlRole = item.Role,
+                        Error = (!Directory.Exists(item.Path)) ? "Can't find model folder. Please check network connection or verify if the model was renamed or moved to other location." : string.Empty
                     };
                     
                     fabctrl.InitializeModelControl();

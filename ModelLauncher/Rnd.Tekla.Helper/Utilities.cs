@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Windows;
 
 namespace Rnd.TeklaStructure.Helper
 {
@@ -101,21 +102,25 @@ namespace Rnd.TeklaStructure.Helper
 
         public List<string> RoleList(string modelfolder)
         {
-            List<string> role = new List<string>();
-            string root = GetTeklaroot(modelfolder).Trim();
-            string version = GetVersion(modelfolder).Trim();
-            string environment = string.Format(@"{0}\{1}\Environments\USimp\", root, version);
-            
-            var environmentDir = new DirectoryInfo(environment);
 
-            foreach (var file in environmentDir.GetFiles())
+            List<string> role = new List<string>();
+
+            if (Directory.Exists(modelfolder))
             {
-                if (file.Name.Contains("Role_"))
+                string root = GetTeklaroot(modelfolder).Trim();
+                string version = GetVersion(modelfolder).Trim();
+                string environment = string.Format(@"{0}\{1}\Environments\USimp\", root, version);
+
+                var environmentDir = new DirectoryInfo(environment);
+
+                foreach (var file in environmentDir.GetFiles())
                 {
-                    role.Add(file.Name.Replace("Role_",string.Empty).Replace("_"," ").Replace(".ini",string.Empty));
+                    if (file.Name.Contains("Role_"))
+                    {
+                        role.Add(file.Name.Replace("Role_", string.Empty).Replace("_", " ").Replace(".ini", string.Empty));
+                    }
                 }
             }
-
             return role;
 
         }

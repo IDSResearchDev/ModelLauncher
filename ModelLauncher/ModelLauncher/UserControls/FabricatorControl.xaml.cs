@@ -21,6 +21,7 @@ namespace ModelLauncher.UserControls
         public string ModelPath { get; set; }
         public string FirmPath { get; set; }
         public string ServerName { get; set; }
+        public string Error { get; set; }
         public int UserCtrlViewId { get; set; }
         public string UserCtrlConfiguration { get; set; }
         public string UserCtrlRole { get; set; }
@@ -42,6 +43,7 @@ namespace ModelLauncher.UserControls
             this.SetOpenButtonProperty();
             this.TxtBoxServerName.Text = GlobalObj.Utilities.GetServerName(this.ModelPath);
             this.TxtBlockModelDetail.Text = this.GetModelFolderName(this.ModelPath);
+            this.TxtBlockErr.Text = Error;
             this.RefreshUserType();
         }
 

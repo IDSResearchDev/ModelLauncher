@@ -74,6 +74,13 @@
                     <Setter Property="BorderBrush" Value="Gray" />
                     <Setter Property="Background" Value="{StaticResource CustomLightGray}" />
                 </Trigger>
+                <DataTrigger Binding="{Binding Error}" Value="Can't find model folder. Please check network connection or verify if the model was renamed or moved to other location.">
+                    <Setter Property="BorderBrush" Value="OrangeRed" />
+                    <Setter Property="BorderThickness" Value="2.5" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Error}" Value="">
+                    <Setter Property="BorderThickness" Value="1" />
+                </DataTrigger>
             </Style.Triggers>
         </Style>
     </Application.Resources>

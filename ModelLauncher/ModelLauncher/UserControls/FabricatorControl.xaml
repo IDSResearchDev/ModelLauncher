@@ -60,11 +60,10 @@
               Stroke="Gray"
               StrokeThickness="1.1"
               X2="1" />
-        <Border BorderThickness="1"
-                CornerRadius="2"
-                Style="{StaticResource BorderHighlight}">
+        <Border CornerRadius="2" Style="{StaticResource BorderHighlight}">
             <Grid Name="GridModelControl" Margin="0,5,5,0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -166,7 +165,7 @@
                          Grid.Column="1"
                          Grid.ColumnSpan="2"
                          Height="40"
-                         Margin="0,0,10,5"
+                         Margin="0,0,10,0"
                          HorizontalAlignment="Left"
                          VerticalContentAlignment="Top"
                          Background="Transparent"
@@ -192,6 +191,20 @@
                           HorizontalAlignment="Left"
                           ItemsSource="{Binding Path=GetRoles}"
                           SelectionChanged="Cmb_SelectionChanged" />
+                <TextBox Name="TxtBlockErr"
+                         Grid.Row="3"
+                         Margin="15,0,0,0"
+                         Grid.ColumnSpan="5"
+                         HorizontalAlignment="Left"
+                         VerticalContentAlignment="Top"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         FontFamily="Segoe UI"
+                         FontSize="11"
+                         FontStyle="Italic"
+                         Foreground="OrangeRed"
+                         IsReadOnly="True"
+                         TextWrapping="WrapWithOverflow" />
 
             </Grid>
         </Border>

@@ -55,8 +55,6 @@ namespace ModelLauncher.WinForms
             var util = new Rnd.Common.Utilities();
             GlobalObj.UpdateConfigModel = util.DeserializeBinFile<UpdateConfigurationModel>(GlobalObj.LocalUpdateConfigurationFile);
 
-            XmlUtilities.CheckifXmlPathsExists();
-
             CheckLatestUpdate();
 
             RefreshPanel();
@@ -136,7 +134,14 @@ namespace ModelLauncher.WinForms
             Process.Start(Path.Combine(appDir + @"ModelLauncher_Help.pdf"));
         }
 
-        
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.F5)
+            {
+                MessageBox.Show("F5 Key Pressed!");
+                e.Handled = true;
 
+            }
+        }
     }
 }

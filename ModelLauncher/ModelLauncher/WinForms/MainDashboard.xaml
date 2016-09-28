@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Model Launcher "
         Width="832"
-        Height="522"
+        Height="550"
         Icon="../mllogo.ico"
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
         SnapsToDevicePixels="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
-        mc:Ignorable="d">
+        mc:Ignorable="d" KeyDown="Window_KeyDown">
 
     <DockPanel LastChildFill="True">
         <Grid Margin="5,5,5,0" DockPanel.Dock="Top">
