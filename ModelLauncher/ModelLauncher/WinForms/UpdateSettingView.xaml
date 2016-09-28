@@ -58,12 +58,13 @@
                     <RadioButton Name="rbtnRndServer"
                                  Margin="5"
                                  VerticalContentAlignment="Center"
-                                 Content="Online :"
+                                 Content="Online "
                                  IsChecked="{Binding IsRNDServer}" />
                     <TextBox Name="txtServer"
                              Grid.Column="1"
                              Width="250"
                              Margin="3"
+                             Visibility="Hidden"
                              IsEnabled="{Binding IsRNDServer}"
                              Text="{Binding RNDServer,
                                             ValidatesOnDataErrors=True}" />

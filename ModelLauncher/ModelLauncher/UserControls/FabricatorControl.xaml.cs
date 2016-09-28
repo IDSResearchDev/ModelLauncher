@@ -43,7 +43,7 @@ namespace ModelLauncher.UserControls
             this.SetOpenButtonProperty();
             this.TxtBoxServerName.Text = GlobalObj.Utilities.GetServerName(this.ModelPath);
             this.TxtBlockModelDetail.Text = this.GetModelFolderName(this.ModelPath);
-            this.TxtBlockErr.Text = Error;
+            this.TxtBlockError.Text = Error;
             this.RefreshUserType();
         }
 

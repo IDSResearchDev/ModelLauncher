@@ -29,8 +29,7 @@
                         HorizontalAlignment="Right"
                         Click="BtnSettings_OnClick"
                         DockPanel.Dock="Right"
-                        ToolTip="Firm Location Setting"
-                        Visibility="Hidden">
+                        ToolTip="Update Setting">
                     <Button.Resources>
                         <CornerRadius x:Key="Rad">2</CornerRadius>
                         <ImageSource x:Key="Img">/ModelLauncher;component/Images/gear_icon.png</ImageSource>
@@ -107,11 +106,7 @@
                         Style="{x:Null}"
                         TextBlock.Foreground="#FF0774B2" />
             </StackPanel>
-
-
-
         </Grid>
-
         <ScrollViewer>
             <StackPanel x:Name="StackPopulate" Margin="20,0,20,20" />
         </ScrollViewer>

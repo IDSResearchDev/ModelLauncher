@@ -26,7 +26,9 @@ namespace ModelLauncher.ViewModel
             CanValidate = false;
             if (GlobalObj.UpdateConfigModel != null)
             {
-                RNDServer = GlobalObj.UpdateConfigModel.RNDServer;
+                RNDServer = GlobalObj.UpdateConfigModel.RNDServer.Equals(string.Empty)
+                    ? @"http://idsftpserver.com/rd/update/"
+                    : GlobalObj.UpdateConfigModel.RNDServer;
                 FTPServer = GlobalObj.UpdateConfigModel.FTPServer;
                 IsRNDServer = GlobalObj.UpdateConfigModel.IsRndServer;
                 IsFTPServer = GlobalObj.UpdateConfigModel.IsFtpServer;
@@ -139,7 +141,7 @@ namespace ModelLauncher.ViewModel
                             };
 
                             util.SerializeBinFile(GlobalObj.LocalUpdateConfigurationFile, GlobalObj.UpdateConfigModel);
-                            Process.Start(updater);
+                            //Process.Start(updater);
                             this.Close();
                         }
                     }
@@ -181,6 +183,9 @@ namespace ModelLauncher.ViewModel
                     protocol = "ftp://";
                     Server = Server.Replace("/", "");
                     host = System.Net.Dns.GetHostEntry(Server);
+
+                    // format: \\{host.HostName}\Dropbox\Update\{app}_update.txt
+                    // ex. \\ORT070\Dropbox\Update\model_launcher_update.txt
 
                     string updateTextFilePath = System.IO.Path.Combine(@"\\" + host.HostName + "\\Dropbox\\Update", updateTextFile);
                     string exeFile = util.GetTextFileValue(updateTextFilePath, delimiter, "ServerFileName");

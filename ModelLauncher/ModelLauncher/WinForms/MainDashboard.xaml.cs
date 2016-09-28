@@ -20,7 +20,15 @@ namespace ModelLauncher.WinForms
         private void BtnSettings_OnClick(object sender, RoutedEventArgs e)
         {
             //this.OpenFirmLocationSetting();
-        }        
+            ViewUpdateSetting();
+        }
+
+        private void ViewUpdateSetting()
+        {
+            UpdateSettingView update = new UpdateSettingView();
+            update.Owner = this;
+            update.ShowDialog();
+        }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -77,16 +85,17 @@ namespace ModelLauncher.WinForms
             }
             if (File.Exists(GlobalObj.LocalUpdaterFile))
             {
-                if (CheckLatestUpdate())
-                {
-                    UpdateSettingView update = new UpdateSettingView();
-                    update.Owner = this;
-                    update.ShowDialog(); 
-                }
-                else
-                {
-                    Process.Start(updater);
-                }          
+                //if (CheckLatestUpdate())
+                //{
+                //    UpdateSettingView update = new UpdateSettingView();
+                //    update.Owner = this;
+                //    update.ShowDialog(); 
+                //}
+                //else
+                //{
+                //    Process.Start(updater);
+                //}     
+                Process.Start(updater);
             }
         }
 
@@ -138,7 +147,7 @@ namespace ModelLauncher.WinForms
         {
             if (e.Key == System.Windows.Input.Key.F5)
             {
-                MessageBox.Show("F5 Key Pressed!");
+                RefreshPanel();
                 e.Handled = true;
 
             }
