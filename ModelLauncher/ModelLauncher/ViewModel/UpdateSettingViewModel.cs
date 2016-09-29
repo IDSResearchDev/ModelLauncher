@@ -27,7 +27,7 @@ namespace ModelLauncher.ViewModel
             if (GlobalObj.UpdateConfigModel != null)
             {
                 RNDServer = GlobalObj.UpdateConfigModel.RNDServer.Equals(string.Empty)
-                    ? @"http://idsftpserver.com/rd/update/"
+                    ? ModelLauncher.Properties.Resources.ServerPath
                     : GlobalObj.UpdateConfigModel.RNDServer;
                 FTPServer = GlobalObj.UpdateConfigModel.FTPServer;
                 IsRNDServer = GlobalObj.UpdateConfigModel.IsRndServer;
@@ -125,6 +125,7 @@ namespace ModelLauncher.ViewModel
                     string updater = Path.Combine(GlobalObj.LocalAppModelLauncherFolder, @"updater.exe");
                     try
                     {
+                        RNDServer = ModelLauncher.Properties.Resources.ServerPath;
                         Server = IsRNDServer ? RNDServer : FTPServer;
                         if (String.IsNullOrEmpty(this.Server)) return;
 
