@@ -7,12 +7,13 @@
         Width="832"
         Height="550"
         Icon="../mllogo.ico"
+        KeyDown="Window_KeyDown"
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
         SnapsToDevicePixels="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
-        mc:Ignorable="d" KeyDown="Window_KeyDown">
+        mc:Ignorable="d">
 
     <DockPanel LastChildFill="True">
         <Grid Margin="5,5,5,0" DockPanel.Dock="Top">

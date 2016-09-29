@@ -125,7 +125,7 @@ namespace ModelLauncher.WinForms
                 }
                 else
                 {                    
-                    MessageBox.Show("Model Launcher update file (" + aiuFile + ") doesn't exist.", "Update not found", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //MessageBox.Show("Model Launcher update file (" + aiuFile + ") doesn't exist.", "Update not found", MessageBoxButton.OK, MessageBoxImage.Information);
                     value = true;                   
                 }                
             }
