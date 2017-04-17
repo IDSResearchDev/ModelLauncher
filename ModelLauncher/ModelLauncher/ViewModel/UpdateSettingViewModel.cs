@@ -26,7 +26,7 @@ namespace ModelLauncher.ViewModel
             CanValidate = false;
             if (GlobalObj.UpdateConfigModel != null)
             {
-                RNDServer = GlobalObj.UpdateConfigModel.RNDServer.Equals(string.Empty)
+                RNDServer = string.IsNullOrEmpty(GlobalObj.UpdateConfigModel.RNDServer)
                     ? ModelLauncher.Properties.Resources.ServerPath
                     : GlobalObj.UpdateConfigModel.RNDServer;
                 FTPServer = GlobalObj.UpdateConfigModel.FTPServer;
